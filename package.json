@@ -2,7 +2,7 @@
   "name": "react-native-umami",
   "version": "0.1.0",
   "description": "React Native Umami Analytics Library",
-  "main": "./lib/module/index.js",
+  "main": "lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
   "exports": {
     ".": {
@@ -32,7 +32,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-umami-example",
+    "example": "yarn workspace react-native-umami-example start",
     "clean": "del-cli lib",
     "prepare": "bob build",
     "typecheck": "tsc",
@@ -83,8 +83,7 @@
     "typescript": "^5.9.2"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": "*"
   },
   "workspaces": [
     "example"

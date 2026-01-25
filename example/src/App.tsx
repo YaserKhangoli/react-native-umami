@@ -1,20 +1,39 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'react-native-umami';
+import {
+  createNavigationContainerRef,
+  NavigationContainer,
+} from '@react-navigation/native';
+import { createRef } from 'react';
+import umami from 'react-native-umami';
+import ScreenRoot from './ScreenRoot';
 
-const result = multiply(3, 7);
+export const navigationRef = createNavigationContainerRef<any>();
+export const screenIsReadyRef = createRef();
+const previousRouteNameRef = createRef();
 
 export default function App() {
+  umami.init({
+    hostUrl: 'hostURL',
+    hostname: 'websiteDomain',
+    website: 'websiteId',
+    title: 'App Name',
+  });
+
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <NavigationContainer
+      onStateChange={(state) => {
+        if (!state) {
+          return;
+        }
+        umami.visit({
+          referrer: (previousRouteNameRef.current as string) || '/',
+          url: '/' + navigationRef.current?.getCurrentRoute()?.name + '/',
+        });
+        previousRouteNameRef.current =
+          '/' + navigationRef.current?.getCurrentRoute()?.name;
+      }}
+      ref={navigationRef}
+    >
+      <ScreenRoot />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
