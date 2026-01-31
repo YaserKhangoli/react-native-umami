@@ -24,7 +24,7 @@ Call `init` before using any other methods.
 import umami from 'react-native-umami';
 
 umami.init({
-  hostUrl: 'https://analytics.example.com',
+  hostUrl: 'https://api.umami.is',
   hostname: 'example.com',
   website: 'your-website-id',
   title: 'My App',
