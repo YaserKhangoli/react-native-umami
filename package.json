@@ -1,5 +1,5 @@
 {
-  "name": "react-native-umami",
+  "name": "react-native-umami-sdk",
   "version": "0.1.0",
   "description": "React Native Umami Analytics Library",
   "main": "lib/module/index.js",

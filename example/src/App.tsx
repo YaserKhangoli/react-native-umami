@@ -3,7 +3,7 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 import { createRef } from 'react';
-import umami from 'react-native-umami';
+import umami from 'react-native-umami-sdk';
 import ScreenRoot from './ScreenRoot';
 
 export const navigationRef = createNavigationContainerRef<any>();

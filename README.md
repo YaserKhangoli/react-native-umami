@@ -1,17 +1,17 @@
-# react-native-umami
+# react-native-umami-sdk
 
 React Native Umami Analytics Library — [umami.is](https://umami.is)
 
 ## Installation
 
 ```sh
-npm install react-native-umami
+npm install react-native-umami-sdk
 ```
 
 Or with Yarn:
 
 ```sh
-yarn add react-native-umami
+yarn add react-native-umami-sdk
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ yarn add react-native-umami
 Call `init` before using any other methods.
 
 ```ts
-import umami from 'react-native-umami';
+import umami from 'react-native-umami-sdk';
 
 umami.init({
   hostUrl: 'https://api.umami.is',
@@ -56,7 +56,7 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 import { createRef } from 'react';
-import umami from 'react-native-umami';
+import umami from 'react-native-umami-sdk';
 
 export const navigationRef = createNavigationContainerRef<any>();
 const previousRouteNameRef = createRef<string>();
@@ -96,7 +96,7 @@ Expo Router exposes the current URL via `usePathname()`, so you can track screen
 // app/_layout.tsx
 import { useEffect, useRef } from 'react';
 import { usePathname, Slot } from 'expo-router';
-import umami from 'react-native-umami';
+import umami from 'react-native-umami-sdk';
 
 export default function RootLayout() {
   const pathname = usePathname();

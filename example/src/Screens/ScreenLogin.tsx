@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { View, Text, Button } from 'react-native';
-import umami from 'react-native-umami';
+import umami from 'react-native-umami-sdk';
 import type { RootNavigatorParamList } from '../RootTypes';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
