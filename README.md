@@ -24,10 +24,10 @@ Call `init` before using any other methods.
 import umami from 'react-native-umami-sdk';
 
 umami.init({
-  hostUrl: 'https://api.umami.is',
+  hostUrl: 'https://cloud.umami.is',
   hostname: 'example.com',
   website: 'your-website-id',
-  title: 'My App',
+  title: 'My App', // optional
   userAgent: 'App (iPhone; ReactNative)', // optional
 });
 ```
@@ -41,8 +41,7 @@ Identify users by passing a unique ID. This associates page views, events, and c
 ```ts
 umami.identify({
   id: 'user-123',
-  url: '/screen/profile',
-  data: { plan: 'premium' },
+  data: { name: 'Yaser', family: 'Khangoli' },
 });
 ```
 
@@ -63,7 +62,7 @@ const previousRouteNameRef = createRef<string>();
 
 export default function App() {
   umami.init({
-    hostUrl: 'https://analytics.example.com',
+    hostUrl: 'https://cloud.umami.is',
     hostname: 'example.com',
     website: 'your-website-id',
     title: 'My App',
@@ -127,8 +126,8 @@ Track page visits (pageviews). Each call records a view of a screen or page. You
 
 ```ts
 umami.visit({
-  url: '/screen/home',
-  referrer: '/screen/login',
+  url: '/home',
+  referrer: '/login',
   data: { screen: 'home' },
 });
 ```
@@ -140,7 +139,6 @@ Track custom events such as button clicks, signups, or conversions. Events appea
 ```ts
 umami.track({
   name: 'button_click',
-  url: '/screen/settings',
   data: { button: 'save' },
 });
 ```
